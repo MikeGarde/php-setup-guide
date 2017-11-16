@@ -1,0 +1,29 @@
+#projects {
+  max-width: 1000px;
+  margin: 0.675em auto; }
+  #projects .project {
+    border: 1px solid #BDBDBD;
+    display: inline-block;
+    float: left;
+    width: 20%;
+    margin: 0 2% 2%;
+    text-align: center; }
+    #projects .project.active {
+      border: 1px solid #add8e6; }
+      #projects .project.active a {
+        background-color: #ffffff; }
+        #projects .project.active a:hover {
+          background-color: #add8e6; }
+    #projects .project a {
+      color: #888888;
+      display: block;
+      padding: 1em;
+      background-color: #BDBDBD; }
+
+#project-template {
+  display: none; }
+
+div.clear {
+  clear: both; }
+
+/*# sourceMappingURL=style.css.map */
