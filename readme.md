@@ -25,9 +25,9 @@ brew doctor
 ### Apache
 
 Your macOs shipped with a copy of Apache, unfortunately it is missing key pieces we need so we will install a second
-copy of Apache. Note that `apachectl -k graceful` and other `apachectl` commands will not work and you will have to
-transition to using `brew`. More on that later. Also, if you're doing this after a clean install you won't be running
-apache so the first command may result in an error, you can ignore that error and run the second command.
+copy of Apache. Note that `apachectl -k graceful` and other `apachectl` commands will still be how you interact with 
+appache. Also, if you're doing this after a clean install you won't be running apache so the first command may result 
+in an error, you can ignore that error and run the second command.
 
 ```bash
 sudo apachectl stop
@@ -43,7 +43,7 @@ brew install httpd
 Start Apache Server
 
 ```bash
-sudo brew services start httpd
+apachectl start
 ```
 
 You can test by visiting `http://localhost:8080`
@@ -78,6 +78,7 @@ reference it properly, I am using the folder `dev` inside my home folder.
 ```bash
 mkdir ~/dev
 mkdir ~/dev/logs
+mkdir ~/dev/logs/xdebug
 git clone https://github.com/MikeGarde/php-setup-guide.git ~/dev/php-setup-guide
 ```
 
@@ -119,7 +120,7 @@ cd ~
 Now that we are routing `.test` traffic to your machine we will get apache to resolve it to the proper directory within 
 your development folder.
 
-Open `~/dev/php-setup-guide/httpd.conf` and replace all `YOUR_HOME_FOLDER` references with your home folder location. Next 
+Open `~/dev/php-setup-guide/httpd.conf` and replace all `YOUR_HOME_FOLDER` references with your home folder location and `YOUR_USER_NAME`. Next 
 use the resulting file and replace `~/dev/httpd.conf` with it.
 
 Open `~/dev/httpd-vhosts.conf`, you can delete everything and replace it with this.
@@ -142,15 +143,14 @@ Open `~/dev/httpd-vhosts.conf`, you can delete everything and replace it with th
 Anytime you modify `httpd.conf` or `httpd-vhosts.conf` file you will need to restart apache,
 
 ```bash
-brew services restart httpd
+sudo apachectl -k graceful
 ```
 
 ### xdebug Setup
 
-Add the following to both of your `~/dev/xdebug.ini` files, the last two lines are for more detailed debugging but be aware, these can 
-generate large files.
+Add the following to both of your `~/dev/xdebug.ini` files, the last two lines are for more detailed debugging.
 
-```bash
+```ini
 xdebug.remote_enable=1
 xdebug.remote_port=9000
 xdebug.remote_host=127.0.0.1
@@ -159,7 +159,7 @@ xdebug.remote_host=127.0.0.1
 ```
 
 ```bash
-brew services restart httpd
+sudo apachectl -k graceful
 ```
 
 If there is a problem with using port 9000 you can change it but note it when setting up xdebug in your IDE.
@@ -177,7 +177,7 @@ mv composer.phar /usr/local/bin/composer
 If you haven't already...
 
 ```bash
-brew services restart httpd
+sudo apachectl -k graceful
 ```
 
 [http://php-setup-guide.test/](http://php-setup-guide.test/) will show you a hello world while 
@@ -204,7 +204,31 @@ LoadModule php7_module /usr/local/opt/php71/libexec/apache2/libphp7.so
 ```
 
 ```bash
-brew services restart httpd
+sudo apachectl -k graceful
+```
+
+### qcachegrind for PHP Memory Profiling
+
+```bash
+brew install qcachegrind
+```
+
+Enable xdebug profile logging in your appropriate `~/dev/php56-xdebug.ini` file.
+
+```ini
+xdebug.profiler_enable=1
+xdebug.profiler_output_dir="/Users/mikegarde/dev/logs/xdebug"
+```
+
+```bash
+sudo apachectl -k graceful
+```
+
+To see results make a request to your machine invoking xdebug, this will create a new file in `~/dev/logs/xdebug`. Reference that
+when running the following.
+
+```bash
+qcachegrind ~/dev/logs/xdebug/cachegrind.out.23938
 ```
 
 ## Extra Stuff I Use
