@@ -1,7 +1,8 @@
 # PHP Development on MacOs High Sierra
 
-This guide will get your machine ready to develop using PHP, Apache, and XDebug. As a consequence we will also setup a handful
-of other tools.
+This guide will get your machine ready for web development using PHP, Apache, and XDebug. As a consequence we will also 
+setup a handful of other tools. If you find a problem with anything please let me know by 
+[creating an issue](https://github.com/MikeGarde/php-setup-guide/issues).
 
 ### Show hidden files
 
@@ -146,7 +147,7 @@ Anytime you modify `httpd.conf` or `httpd-vhosts.conf` file you will need to res
 sudo apachectl -k graceful
 ```
 
-### xdebug Setup
+### Xdebug Setup
 
 Add the following to both of your `~/dev/xdebug.ini` files, the last two lines are for more detailed debugging.
 
@@ -162,7 +163,7 @@ xdebug.remote_host=127.0.0.1
 sudo apachectl -k graceful
 ```
 
-If there is a problem with using port 9000 you can change it but note it when setting up xdebug in your IDE.
+If there is a problem with using port 9000 you can change it but note it when setting up Xdebug in your IDE.
 
 ### Composer
 
@@ -207,14 +208,14 @@ LoadModule php7_module /usr/local/opt/php71/libexec/apache2/libphp7.so
 sudo apachectl -k graceful
 ```
 
-### qcachegrind for PHP Memory Profiling
+### QCacheGrind for PHP Memory Profiling
 
 ```bash
 brew install qcachegrind
 brew install graphviz
 ```
 
-Enable xdebug profile logging in your appropriate `~/dev/php56-xdebug.ini` file.
+Enable Xdebug profile logging in your appropriate `~/dev/php56-xdebug.ini` file.
 
 ```ini
 xdebug.profiler_enable=1
@@ -226,9 +227,11 @@ sudo apachectl -k graceful
 ```
 
 To see results make a request to your machine invoking xdebug, this will create a new file in `~/dev/logs/xdebug`. Reference that
-when running the following.
+when running the following or open `⌘ + space` qcachegrind and open the file. Note that using the command line will give you
+additional information when performing actions within QCacheGrind.
 
 ```bash
+qcachegrind # OR
 qcachegrind ~/dev/logs/xdebug/cachegrind.out.23938
 ```
 
@@ -249,3 +252,26 @@ curl -O https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
 rm get-pip.py
 ```
+
+### Keyboard Shortcuts
+
+Download [Alfred 3](https://www.alfredapp.com/), I disable `⌘ + space` in my keyboard shortcuts an setup Alfred to open using the same command.
+
+![Alfred Settings 1](https://raw.githubusercontent.com/MikeGarde/php-setup-guide/master/assets/img/spotlight.png)
+![Alfred Settings 2](https://raw.githubusercontent.com/MikeGarde/php-setup-guide/master/assets/img/alfred.png)
+
+Screen shot replacement commands.
+
+![Easy Screen Shots](https://raw.githubusercontent.com/MikeGarde/php-setup-guide/master/assets/img/screenshot.png)
+
+### Good Stuff
+
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/) or [PhpStorm](https://www.jetbrains.com/phpstorm/), well worth the investment.
+* [Sourcetree](https://www.sourcetreeapp.com/) for git.
+* [ForkLift](http://www.binarynights.com/forklift/) for file management, SFTP, and S3 buckets.
+* [Sublime Text](https://www.sublimetext.com/) for text editing AND multiple selections using regular expressions.
+* [Postman](https://www.getpostman.com/) for calling API's.
+* [Sequel Pro](https://www.sequelpro.com/) for MySQL.
+* [Better Snap Tools](https://itunes.apple.com/us/app/bettersnaptool/id417375580?mt=12) for window management.
+* [Whatpulse](https://whatpulse.org/) because it's interesting.
+* [f.lux](https://justgetflux.com/) for screen brightness/color, nice when working late.
