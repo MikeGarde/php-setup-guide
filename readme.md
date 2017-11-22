@@ -253,17 +253,6 @@ sudo python get-pip.py
 rm get-pip.py
 ```
 
-### Keyboard Shortcuts
-
-Download [Alfred 3](https://www.alfredapp.com/), I disable `⌘ + space` in my keyboard shortcuts an setup Alfred to open using the same command.
-
-![Alfred Settings 1](https://raw.githubusercontent.com/MikeGarde/php-setup-guide/master/assets/img/spotlight.png)
-![Alfred Settings 2](https://raw.githubusercontent.com/MikeGarde/php-setup-guide/master/assets/img/alfred.png)
-
-Screen shot replacement commands.
-
-![Easy Screen Shots](https://raw.githubusercontent.com/MikeGarde/php-setup-guide/master/assets/img/screenshot.png)
-
 ### Good Stuff
 
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/) or [PhpStorm](https://www.jetbrains.com/phpstorm/), well worth the investment.
@@ -275,3 +264,14 @@ Screen shot replacement commands.
 * [Better Snap Tools](https://itunes.apple.com/us/app/bettersnaptool/id417375580?mt=12) for window management.
 * [Whatpulse](https://whatpulse.org/) because it's interesting.
 * [f.lux](https://justgetflux.com/) for screen brightness/color, nice when working late.
+
+### Keyboard Shortcuts
+
+Download [Alfred 3](https://www.alfredapp.com/), I disable `⌘ + space` in my keyboard shortcuts an setup Alfred to open using the same command.
+
+![Alfred Settings 1](https://raw.githubusercontent.com/MikeGarde/php-setup-guide/master/assets/img/spotlight.png)
+![Alfred Settings 2](https://raw.githubusercontent.com/MikeGarde/php-setup-guide/master/assets/img/alfred.png)
+
+Screen shot replacement commands.
+
+![Easy Screen Shots](https://raw.githubusercontent.com/MikeGarde/php-setup-guide/master/assets/img/screenshot.png)
