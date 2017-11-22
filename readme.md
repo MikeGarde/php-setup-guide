@@ -16,8 +16,6 @@ and "Relaunch".
 
 ### Homebrew
 
-If needed this will also install Xcode Command Line Tools.
-
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew doctor
@@ -173,7 +171,7 @@ Follow instructions at [Composer](https://getcomposer.org/download/), when done 
 mv composer.phar /usr/local/bin/composer
 ```
 
-## And Your Done, Lets Test
+## And You're Done, Let's Test
 
 If you haven't already...
 
@@ -264,6 +262,10 @@ rm get-pip.py
 * [Better Snap Tools](https://itunes.apple.com/us/app/bettersnaptool/id417375580?mt=12) for window management.
 * [Whatpulse](https://whatpulse.org/) because it's interesting.
 * [f.lux](https://justgetflux.com/) for screen brightness/color, nice when working late.
+
+### PHP Specific Stuff
+
+* [Rollbar](https://rollbar.com/) you'll stop hating your users. "Something wen't wrong, sorry I can't explain what I was doing."
 
 ### Keyboard Shortcuts
 
