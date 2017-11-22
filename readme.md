@@ -7,12 +7,8 @@ setup a handful of other tools. If you find a problem with anything please let m
 ### Show hidden files
 
 ```bash
-defaults write com.apple.finder AppleShowAllFiles YES
+defaults write com.apple.finder AppleShowAllFiles YES && killall Finder
 ```
-
-You will have to restart finder for the changes to take effect, go to the apple menu, Force Quit, select Finder 
-and "Relaunch".
-
 
 ### Homebrew
 
