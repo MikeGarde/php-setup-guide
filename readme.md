@@ -186,7 +186,7 @@ sudo apachectl -k graceful
 
 ### Adding Projects
 
-Simply open `~/dev/httpd-vhosts.conf` and copy the `php-setup-guide example`, if you don't need separated logging simply remove 
+Open `~/dev/httpd-vhosts.conf` and copy the `php-setup-guide example`, if you don't need separated logging simply remove 
 the ErrorLog and/or CustomLog lines.
 
 ### Switching between PHP 5.6 and 7.1
@@ -211,6 +211,7 @@ sudo apachectl -k graceful
 
 ```bash
 brew install qcachegrind
+brew install graphviz
 ```
 
 Enable xdebug profile logging in your appropriate `~/dev/php56-xdebug.ini` file.
