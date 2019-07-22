@@ -1,3 +1,7 @@
+# WARNING
+
+homebrew has removed PHP 5.6 and this guide needs to be updated
+
 # PHP Development on MacOs High Sierra
 
 This guide will get your machine ready for web development using PHP, Apache, and XDebug. As a consequence we will also 
